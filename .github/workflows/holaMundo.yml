@@ -1,0 +1,13 @@
+name: "Hola Mundo CI/CD"
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  hola_mundo:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Escribir mensaje
+        run: echo "Hola Mundo CI/CD"
