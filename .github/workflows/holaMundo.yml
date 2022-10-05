@@ -9,7 +9,6 @@ jobs:
   hola_mundo:
     runs-on: ubuntu-20.04
     steps:
-      - name: Escribir mensaje
-        run: echo "Hola Mundo CI/CD"
+      - uses: actions/checkout@v3
       - run: date
       - run: ls -l
