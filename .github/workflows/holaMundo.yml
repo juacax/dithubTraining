@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - "main"
+      - "ramaTest"
 
 jobs:
   hola_mundo:
