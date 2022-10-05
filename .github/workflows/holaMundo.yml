@@ -13,5 +13,5 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: date
-      - run: ls -l
+      - name: "Correr Test"
+        run: "npm run test"
