@@ -7,12 +7,6 @@ on:
       - "ramaTest"
 
 jobs:
-  HolaMundo:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: "Saludamos"
-        run: echo ${{secrets.HOLA_MUNDO}}
-
   Eslint:
     runs-on: ubuntu-20.04
     steps:
@@ -24,3 +18,5 @@ jobs:
         run: npm ci
       - name: "Correr ESlint"
         run: npm run lint
+      - name: "Correr Test"
+        run: npm run test
