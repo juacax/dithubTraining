@@ -1,10 +1,9 @@
 name: "Hola Mundo CI/CD"
 
 on:
-  push:
-    branches:
-      - "main"
-      - "ramaTest"
+  pull_request:
+    branches: ["ramaTest"]
+    types: [opened,synchronize]
 
 jobs:
   TrabajoGeneral:
