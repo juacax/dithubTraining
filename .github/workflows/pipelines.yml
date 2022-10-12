@@ -7,9 +7,13 @@ on:
       - "ramaTest"
 
 jobs:
-  Eslint:
+  TrabajoGeneral:
     runs-on: ubuntu-20.04
     steps:
+      - name: Cancelar trabajos previos
+        uses: styfle/cancel-workflow-action@0.11.0
+        with:
+          access_token: ${{ github.token }}
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
@@ -18,5 +22,7 @@ jobs:
         run: npm ci
       - name: "Correr ESlint"
         run: npm run lint
+      - name: "Buildeamos nuestra app"
+        run: npm run build
       - name: "Correr Test"
         run: npm run test
