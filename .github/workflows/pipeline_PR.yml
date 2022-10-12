@@ -35,7 +35,7 @@ jobs:
       run: npm run build
 
   Test:
-    needs: [Eslint, Build]
+    needs: [Build]
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v3
