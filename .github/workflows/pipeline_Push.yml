@@ -33,8 +33,13 @@ jobs:
       run: npm ci
     - name: "Buildeamos nuestra app"
       run: npm run build
+    - uses: actions/upload-artifact@v3
+      with:
+        name: dist
+        path: dist
 
   Test:
+    needs: [Eslint, Build]
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v3
@@ -43,5 +48,9 @@ jobs:
         node-version: 16
     - name: "Instalar dependencias"
       run: npm ci
+    - uses: actions/download-artifact@v3
+      with:
+        name: dist
+        path: dist
     - name: "Correr Test"
       run: npm run test
