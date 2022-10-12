@@ -2,7 +2,7 @@ name: "Hola Mundo CI/CD"
 
 on:
   pull_request:
-    branches: ["ramaTest"]
+    branches: ["ramaTest", "main"]
     types: [opened,synchronize]
 
 jobs:
